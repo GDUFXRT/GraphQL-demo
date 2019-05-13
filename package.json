@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "babel-watch --watch . --exclude node_modules server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.0",
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^7.0.0"
+  }
+}
