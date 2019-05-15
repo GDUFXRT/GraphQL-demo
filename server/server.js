@@ -1,13 +1,20 @@
 import express from 'express'
 import { ApolloServer } from 'apollo-server-express'
 
+import userModel from './userModel'
 import resolvers from './api/resolvers'
 import typeDefs from './api/schema'
 
 // In the most basic sense, the ApolloServer can be started
 // by passing type definitions (typeDefs) and the resolvers
 // responsible for fetching the data for those types.
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: () => {
+    return { userModel }
+  }
+})
 
 const app = express()
 server.applyMiddleware({ app })
